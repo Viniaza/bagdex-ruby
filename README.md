@@ -64,7 +64,7 @@ O projeto utiliza as tecnologias:
 ### 10 - Criar o banco de dados com base no padrão
 	* rails db:migrate
 	
-### Outros comandos
+#### Outros comandos
     * rails db:create
     * rails db:drop
     * rails db:migrate
