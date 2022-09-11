@@ -60,16 +60,16 @@ O projeto utiliza as tecnologias:
 
 	* rails -T db
 (_Tasks do Banco de Dados_)
-
+	
+### 10 - Criar o banco de dados com base no padrão
+	* rails db:migrate
+	
 ### Outros comandos
     * rails db:create
     * rails db:drop
     * rails db:migrate
     * rails db:rolllback
-	
-### 10 - Criar o banco de dados com base no padrão
-	* rails db:migrate
-	
+
 ### 11 - Subindo a aplicação do rails
 	* rails s -b 0.0.0.0
 	* rails s -b 0.0.0.0 -e production
