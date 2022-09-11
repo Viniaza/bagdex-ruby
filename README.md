@@ -51,7 +51,7 @@ O projeto utiliza as tecnologias:
 	* rails generate scaffold <Model> <campo:tipo> <campo:tipo>
     * rails g scaffold City description:string code:integer image
 
-### 8 - Entrar na interface d0 banco de dados
+### 8 - Entrar na interface do banco de dados
 	* rails db
 	
 ### 9 - Listar as Tasks disponíveis
@@ -61,7 +61,7 @@ O projeto utiliza as tecnologias:
 	* rails -T db
 (_Tasks do Banco de Dados_)
 
-### Comandos disponiveis
+### Outros comandos
     * rails db:create
     * rails db:drop
     * rails db:migrate
@@ -86,9 +86,9 @@ O projeto utiliza as tecnologias:
 	* rails db:migrate
 
 ### 14 - Criando uma "seed" quer serve para popular o banco com dados pré-definidos
-    * State.create(id: 24, description: 'Santa Catarina', acronym: 'SC')
-    * State.create(id: 25, description: 'Sergipe', acronym: 'SE')
-    * State.create(id: 26, description: 'São Paulo', acronym: 'SP')
+    * State.find_or_create_by!(id: 24, description: 'Santa Catarina', acronym: 'SC')
+    * State.find_or_create_by!(id: 25, description: 'Sergipe', acronym: 'SE')
+    * State.find_or_create_by!(id: 26, description: 'São Paulo', acronym: 'SP')
     * State.find_or_create_by!(id: 27, description: 'Tocantins', acronym: 'TO')
 	
 ### 15 - Executar o comando
