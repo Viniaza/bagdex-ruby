@@ -123,4 +123,4 @@ O projeto utiliza as tecnologias:
     4) Usar o token do Github como senha
 
 #### Para clonar este repositório
-git clone https://github.com/Viniaza/rails-ini-projeto.git
+	* git clone https://github.com/Viniaza/rails-ini-projeto.git
