@@ -57,6 +57,7 @@ O projeto utiliza as tecnologias:
 ### 9 - Listar as Tasks disponíveis
 	* rails -T
 (_Todas as tasks_)
+
 	* rails -T db
 (_Tasks do Banco de Dados_)
 
