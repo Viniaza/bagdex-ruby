@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'login/index'
   resources :types
   resources :bagmons
   resources :users
