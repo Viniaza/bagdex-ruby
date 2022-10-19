@@ -1,23 +1,33 @@
 <p id="notice"><%= notice %></p>
+<body style='display: flex; align-itens: center; justify-content: center; background-color: <%=@bagmon.type.color %>'>
 
-<p>
-  <strong>Number:</strong>
-  <%= @bagmon.number %>
-</p>
+  <div style='width: auto; border-style: outset;'>
+    <h1 style='text-align: center; background: <%=@bagmon.type.color %>; padding: 1.5rem;'><%= @bagmon.name %></h1>
+      <div style='background-color: white; display: flex; flex-direction: column; padding: 1.5rem;'>
+        <p>
+        <strong>#
+        <%= @bagmon.number %>
+        </strong>
+        </p>
 
-<p>
-  <%= image_tag @bagmon.image, size: "250x250" %>
-</p>
+        <p>
+          <%= image_tag @bagmon.image, size: "250x250" %>
+        </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @bagmon.name %>
-</p>
 
-<p>
-  <strong>Type:</strong>
-  <%= @bagmon.type.name  %>
-</p>
 
-<%= link_to 'Edit', edit_bagmon_path(@bagmon) %> |
-<%= link_to 'Back', bagmons_path %>
+        <p>
+          <strong>Type:</strong>
+          <%= @bagmon.type.name  %>
+        </p>
+
+        <div>
+          <%= link_to 'Edit', edit_bagmon_path(@bagmon) %> |
+          <%= link_to 'Back', bagmons_path %>   
+        </div>
+      </div>
+      
+
+  </div>
+</body>
+
