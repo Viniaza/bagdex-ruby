@@ -2,23 +2,16 @@
 <body style='display: flex; align-itens: center; justify-content: center; background-color: <%=@bagmon.type.color %>'>
 
   <div style='width: auto; border-style: outset;'>
-    <h1 style='text-align: center; background: <%=@bagmon.type.color %>; padding: 1.5rem;'><%= @bagmon.name %></h1>
+    <h1 style='text-align: center; background: <%=@bagmon.type.color %>; padding: 1.5rem;'><%= @bagmon.name %> #<%= @bagmon.number%></h1>
       <div style='background-color: white; display: flex; flex-direction: column; padding: 1.5rem;'>
+ 
         <p>
-        <strong>#
-        <%= @bagmon.number %>
-        </strong>
+          <strong>Type:</strong>
+          <%= @bagmon.type.name  %>
         </p>
 
         <p>
           <%= image_tag @bagmon.image, size: "250x250" %>
-        </p>
-
-
-
-        <p>
-          <strong>Type:</strong>
-          <%= @bagmon.type.name  %>
         </p>
 
         <div>

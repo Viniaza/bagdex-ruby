@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :number %>
-    <%= form.number_field :number %>
+  <div class="input-group mb-3">
+    <%= form.label :number, class: "input-group-text" %>
+    <%= form.number_field :number, class: "form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="input-group mb-3">
+    <%= form.label :name, class: "input-group-text" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image %>
+  <div class="input-group mb-3">
+    <%= form.label :image, class: "input-group-text" %>
+    <%= form.text_field :image, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :type_id %>
-    <%= form.select("type_id", @type_options, {include_blank: 'Selecione...'}, {:multiple => false}) %>
+  <div class="input-group mb-3">
+    <%= form.label :type_id, class: "input-group-text" %>
+    <%= form.select("type_id", @type_options, {include_blank: 'Selecione...', class: "form-select"}, {:multiple => false}) %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-success" %>
   </div>
 <% end %>

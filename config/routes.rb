@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'login/index'
+  
+  resources :battle
   resources :types
   resources :bagmons
   root to: 'bagmons#index'
