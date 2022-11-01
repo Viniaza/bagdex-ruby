@@ -11,15 +11,14 @@
         </p>
 
         <p>
+        <%= @bagmon.type.name  %>
+        </p>
+
+        <p>
           <%= image_tag @bagmon.image, size: "250x250" %>
         </p>
 
 
-
-        <p>
-          <strong>Type:</strong>
-          <%= @bagmon.type.name  %>
-        </p>
 
         <div>
           <%= link_to 'Edit', edit_bagmon_path(@bagmon) %> |
