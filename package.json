@@ -1,5 +1,7 @@
 {
   "name": "bagdex-ruby",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "5.2.2"
+  }
 }
