@@ -1,24 +1,25 @@
-<h1>Battle#index</h1>
-<p>Find me in app/views/battle/index.html.erb</p>  
+<h1 class="text-center mb-3">Battle</h1>
 
-
-<%= options_from_collection_for_select(bagmon, :id, :name) %>
-
-
-<%
-=begin%>
-<form>
-    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-    </select>
- </form> 
-<%
-=end%>
-
-
-
-
-
+<form class="container d-flex flex-column gap-3 w-50">
+    <div class="d-flex flex-row gap-3">
+        <div class="form-group w-50">
+            <label for="battle1">Bagmon 1</label>
+            <select id="battle1" name="battle1" class="form-control">
+                <option selected>Selecione...</option>
+                <% @bagmons.each do |bagmon| %>
+                    <option value="<%= bagmon.id %>"><%= bagmon.name %></option>
+                <% end %>
+            </select>
+        </div>
+        <div class="form-group w-50">
+            <label for="battle2">Bagmon 2</label>
+            <select id="battle2" name="battle2" class="form-control">
+                <option selected>Selecione...</option>
+                <% @bagmons.each do |bagmon| %>
+                    <option value="<%= bagmon.id %>"><%= bagmon.name %></option>
+                <% end %>
+            </select>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Battle</button>
+</form>
