@@ -1,6 +1,6 @@
 <% if @bagmon1 && @bagmon2 %>
     <div class="container d-flex flex-column gap-3">
-        <h2 class="text-center">Resultado</h2>
+        <h2 class="text-center">Result</h2>
         <p>
               <%= image_tag @bagmon1.image, size: "250x250" %>
             </p>
@@ -9,18 +9,19 @@
             </p>
         <% @rounds.each do |round| %>
             <p class="text-center"><%= round %></p>
+            <%# with 1 second delay for each round %>
+            <% sleep(1) %>
         <% end %>
-            <% sleep 1 %>
 
     </div>
 <% else %>
-    <h1 class="text-center mb-3">Escolha 2 oponentes</h1>
+    <h1 class="text-center mb-3">Choose 2 Bagmons</h1>
     <form action="/battle" class="container d-flex flex-column gap-3 w-50">
         <div class="d-flex flex-row gap-3">
             <div class="form-group w-50">
                 <label for="bagmon1">Bagmon 1</label>
                 <select required id="bagmon1" name="bagmon1" class="form-control">
-                    <option selected disabled>Selecione...</option>
+                    <option selected disabled>Select...</option>
                     <% @bagmons.each do |bagmon| %>
                         <option value="<%= bagmon.id %>"><%= bagmon.name %></option>
                     <% end %>
@@ -29,7 +30,7 @@
             <div class="form-group w-50">
                 <label for="bagmon2">Bagmon 2</label>
                 <select required id="bagmon2" name="bagmon2" class="form-control">
-                    <option selected disabled>Selecione...</option>
+                    <option selected disabled>Select...</option>
                     <% @bagmons.each do |bagmon| %>
                         <option value="<%= bagmon.id %>"><%= bagmon.name %></option>
                     <% end %>
