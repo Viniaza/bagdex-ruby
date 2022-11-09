@@ -6,6 +6,8 @@ class BagmonsController < ApplicationController
     @type_options = Type.all.pluck(:name, :id)
   end
 
+
+
   # GET /bagmons or /bagmons.json
   def index
     @bagmons = Bagmon.all
