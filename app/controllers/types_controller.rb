@@ -1,4 +1,4 @@
-class TypesController < ApplicationController
+class TypesController < UsersBackofficeController
   before_action :set_type, only: %i[ show edit update destroy ]
 
   # GET /types or /types.json

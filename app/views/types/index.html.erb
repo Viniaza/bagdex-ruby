@@ -1,29 +1,31 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Types</h1>
+<div class="container">
 
-<table class="table.table-responsive">
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Color</th>
-      <th scope="col" colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @types.each do |type| %>
-      <tr style="background: <%=type.color %>">
-        <td><%= type.name %></td>
-        <td><%= type.color %></td>
-        <td><%= link_to 'Show', type, class: "btn btn-dark btn-sm", style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %></td>
-        <td><%= link_to 'Edit', edit_type_path(type), class: "btn btn-dark btn-sm", style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %></td>
-        <td><%= link_to 'Destroy', type, class: "btn btn-dark btn-sm", style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <div class="d-flex align-items-center justify-content-between">
+    <h1>Types</h1>
+    <%= link_to 'New Type', new_type_path, class:'btn btn-dark' %>
+  </div>
+  
+  <table class="table.table-responsive">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Color</th>
+        <th scope="col" colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @types.each do |type| %>
+        <tr style="background: <%=type.color %>">
+          <td><%= type.name %></td>
+          <td><%= type.color %></td>
+          <td><%= link_to 'Show', type, class: "btn btn-dark btn-sm", style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %></td>
+          <td><%= link_to 'Edit', edit_type_path(type), class: "btn btn-dark btn-sm", style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %></td>
+          <td><%= link_to 'Destroy', type, class: "btn btn-dark btn-sm", style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-<%= link_to 'New Type', new_type_path %>
