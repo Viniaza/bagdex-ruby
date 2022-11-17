@@ -20,9 +20,9 @@
         <tr style="background: <%=type.color %>">
           <td><%= type.name %></td>
           <td><%= type.color %></td>
-          <td><%= link_to 'Show', type, class: "btn btn-dark btn-sm", style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %></td>
-          <td><%= link_to 'Edit', edit_type_path(type), class: "btn btn-dark btn-sm", style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %></td>
-          <td><%= link_to 'Destroy', type, class: "btn btn-dark btn-sm", style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'View', type, class: "btn btn-primary", style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %></td>
+          <td><%= link_to 'Edit', edit_type_path(type), class: "btn btn-warning btn-sm", style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" %></td>
+          <td><%= link_to 'Destroy', type, class: "btn btn-danger btn-sm", style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;", method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
