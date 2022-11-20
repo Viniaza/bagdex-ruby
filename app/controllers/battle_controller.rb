@@ -10,7 +10,7 @@ class BattleController < UsersBackofficeController
 
       lifeBagmon1 = 100
       lifeBagmon2 = 100
-
+      @lifes = [[lifeBagmon1, lifeBagmon2]]
       # Random bagmon attack first
       bagmonAttacking = rand(1..2) == 1 ? @bagmon1 : @bagmon2
 
@@ -23,11 +23,13 @@ class BattleController < UsersBackofficeController
           attack = rand(5..15)
           lifeBagmon2 -= attack
           @rounds << @bagmon1.name + " attacked " + @bagmon2.name+ " and remove #{attack} life points"
+          @lifes << [lifeBagmon1, lifeBagmon2]
           bagmonAttacking = @bagmon2
         else
           attack = rand(5..15)
           lifeBagmon1 -= attack
           @rounds << @bagmon2.name + " attacked " + @bagmon1.name + " and remove #{attack} life points"
+          @lifes << [lifeBagmon1, lifeBagmon2]
           bagmonAttacking = @bagmon1
         end
       end
@@ -35,8 +37,10 @@ class BattleController < UsersBackofficeController
       # Display winner
       if (lifeBagmon1 <= 0)
         @rounds << @bagmon2.name + " won!"
+        @vencedor = @bagmon2
       elsif (lifeBagmon2 <= 0)
         @rounds << @bagmon1.name + " won!"
+        @vencedor = @bagmon1
       end
     end
 

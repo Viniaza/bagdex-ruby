@@ -2,19 +2,46 @@
     <%= @rounds %>
 </p>
 
+<p id='lifes' style="display: none;">
+    <%= @lifes %>
+</p>
+
 <% if @bagmon1 && @bagmon2 %>
-    <div id="result" class="container d-flex flex-column gap-3">
-        <h2 class="text-center">Result</h2>
+    <div class="container d-flex flex-column gap-3" >
+        <h1 class="text-center">Battle</h1>
         <div class="d-flex align-items-center justify-content-between">
-            <p>
-              <%= image_tag @bagmon1.image, size: "250x250" %>
-            </p>
+            <div>
+                <p>
+                <%= image_tag @bagmon1.image, width: "400" %>
+                </p>
+                <h2 id="bagmon1">
+                    Life:
+                </h2>
+            </div>
             <p>
               X
             </p>
-            <p>
-              <%= image_tag @bagmon2.image, size: "250x250" %>
-            </p>
+            <div>
+                <p>
+                    <%= image_tag @bagmon2.image, width: "400" %>
+                </p>
+                <h2 id="bagmon2">
+                    Life: 
+                </h2>
+            </div>
+        </div>
+        <div id="result" style="overflow: auto; max-height: 100px;">
+        </div>
+        <div id="resultAll" style="display: none;">
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <button id="show-all" class="btn btn-primary">
+                Show all
+            </button>
+            <button id="hide-all" class="btn btn-primary" style="display: none;" >
+                Hide all
+            </button>
         </div>
     </div>
 <% else %>
@@ -49,10 +76,9 @@
 
 <% if @bagmon1 && @bagmon2 %>
     <script>
-        console.log("Bagmon 1: <%= @bagmon1.name %>")
-        console.log("Bagmon 2: <%= @bagmon2.name %>")
 
         const rounds = JSON.parse(document.getElementById('data').innerHTML)
+        const lifes = JSON.parse(document.getElementById('lifes').innerHTML)
 
         function delay(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
@@ -61,14 +87,50 @@
         // To each round delay and console.log the round
 
         async function battle() {
-            for (let i = 0; i < rounds.length; i++) {
-                await delay(300);
-                document.querySelector('#result').innerHTML += `<p class="text-center">${rounds[i]}</p>`
 
+            let bagmon1 = document.querySelector('#bagmon1')
+            let bagmon2 = document.querySelector('#bagmon2')
+
+            for (let i = 0; i < rounds.length; i++) {
+
+                await delay(300);
+                document.querySelector('#bagmon2').innerHTML = `<h2 class="text-center"> Life: ${lifes[i][1]}</h2>`
+                document.querySelector('#bagmon1').innerHTML = `<h2 class="text-center"> Life: ${lifes[i][0]}</h2>`
+
+                await delay(300);
+                document.querySelector('#result').innerHTML = `<p class="text-center">${rounds[i]}</p>`
+                document.querySelector('#resultAll').innerHTML += `<p class="text-center">${rounds[i]}</p>`
+                document.querySelector('#bagmon2').innerHTML = `<h2 class="text-center"> Life: ${lifes[i][1]}</h2>`
+                document.querySelector('#bagmon1').innerHTML = `<h2 class="text-center"> Life: ${lifes[i][0]}</h2>`
                 window.scrollTo(0, document.body.scrollHeight);
 
             }
+            // document.querySelector('#vencedorImage').style.display = "block"
         }
+
+
+
+        document.querySelector('#show-all').addEventListener('click', () => {
+            document.querySelector('#result').style.overflow = 'unset'
+            document.querySelector('#result').style.maxHeight = 'unset'
+            document.querySelector('#resultAll').style.display = 'block'
+            document.querySelector('#result').style.display = 'none'
+            document.querySelector('#show-all').style.display = 'none'
+            document.querySelector('#hide-all').style.display = 'block'
+            window.scrollTo(0, document.body.scrollHeight);
+
+        })
+
+        document.querySelector('#hide-all').addEventListener('click', () => {
+            document.querySelector('#result').style.overflow = 'auto'
+            document.querySelector('#result').style.maxHeight = '100px'
+            document.querySelector('#resultAll').style.display = 'none'
+            document.querySelector('#result').style.display = 'block'
+            document.querySelector('#show-all').style.display = 'block'
+            document.querySelector('#hide-all').style.display = 'none'
+            window.scrollTo(0, document.body.scrollHeight);
+
+        })
 
         battle();
     </script>

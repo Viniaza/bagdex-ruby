@@ -5,6 +5,13 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.image{
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
 .container-cadastro {
     background: url(https://bagdex.com.br/wp-content/uploads/2022/09/fundo_site_01.png) no-repeat center center;
     position: relative;

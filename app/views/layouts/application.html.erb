@@ -7,19 +7,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-<nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
-  <div class="container-fluid">
-      <div class="container">
-        <a class="navbar-brand" href="/">
-      <img src="/logo_bagdex.png" alt="Bagdex" width="100">
-    </a>
-  </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    </div>
-    <%= link_to "Logoff ->", destroy_user_session_path , method: :delete %>
-  </div>
-</nav>
-
   <body>
     
     <%= yield %>
