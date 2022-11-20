@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <body style='background-color: <%=@bagmon.type.color %>'>
   <div style='display: flex; flex-direction: column; align-items: center;'>
     <div class="card border-light mb-3" style="width: 18rem; top: 0;
@@ -18,8 +17,8 @@
             </p>
 
             <div>
-              <%= link_to 'Back', bagmons_path, class: "btn btn-dark btn-sm", style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"%>
-              <%= link_to 'Edit', edit_bagmon_path(@bagmon), class: "btn btn-dark btn-sm", style: "--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"%>
+              <%= link_to 'Edit', edit_bagmon_path(@bagmon), class:"btn btn-warning" %>
+              <%= link_to 'Back', bagmons_path, class:"btn btn-primary" %>   
             </div>
           </div>
     </div>

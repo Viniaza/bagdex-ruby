@@ -1,8 +1,10 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="d-flex align-items-center justify-content-between">
+  <h1>Bagmons</h1>
 
-<h1>Bagmons</h1>
+  <%= link_to 'New Bagmon', new_bagmon_path, class:'btn btn-dark' %>
+  </div>
 
-<body> 
   <div style='display: flex; flex-wrap: wrap; width: 100%; gap: 1rem; justify-content: space-between;'>
     <% @bagmons.each do |bagmon| %>
       <a style='text-decoration: none; background: <%=bagmon.type.color %>' href='/bagmons/<%= bagmon.id %>'>
@@ -15,9 +17,5 @@
       </a>
     <% end %>
   </div>
-</body>
+</div>
 
-
-<br>
-
-<%= link_to 'New Bagmon', new_bagmon_path %>
