@@ -1,4 +1,28 @@
+Type.destroy_all
 
+types = Type.create([{ id: 1, name: 'Planta', color: '#04dd33' },
+{  id: 2, name: 'Voador', color: '#A890F0' },
+{  id: 3, name: 'Fogo', color: '#F08030' },
+{  id: 4, name: 'Aço', color: '#9FB8B9' },
+{  id: 5, name: 'Água', color: '#4593C4' },
+{  id: 6, name: 'Pedra', color: '#5F5E5A' },
+{  id: 7, name: 'Terra', color: '#EEB147' },
+{  id: 8, name: 'Lutador', color: '#868277' },
+{  id: 9, name: 'Normal', color: '#CADBED' },
+{  id: 10, name: 'Psíquico', color: '#CA6BCC' },
+{  id: 11, name: 'Inseto', color: '#94B24E' },
+{  id: 12, name: 'Elétrico', color: '#F8D030' },
+{  id: 13, name: 'Sintético', color: '#8E8E9F' },
+{  id: 14, name: 'Fada', color: '#E584A0' },
+{  id: 15, name: 'Fantasma', color: '#624D8F' },
+{  id: 16, name: 'Sombrio', color: '#2F2F87' },
+{  id: 17, name: 'Som', color: '#8B7C55' },
+{  id: 18, name: 'Dragão', color: '#B9464E' },
+{  id: 19, name: 'Venenoso', color: '#57D870' },
+{  id: 20, name: 'Gelo', color: '#B4CBD9' },
+{  id: 21, name: 'Cósmico', color: '#A686DA' },
+{  id: 22, name: 'Indefinido', color: '#333333' },
+])
 
 Bagmon.destroy_all
 
@@ -156,30 +180,6 @@ bagmons = Bagmon.create([{ number: 1, name: 'Voara', image: 'https://pbs.twimg.c
 
 
 ])
-Type.destroy_all
 
-types = Type.create([{ id: 1, name: 'Planta', color: '#04dd33' },
-{  id: 2, name: 'Voador', color: '#A890F0' },
-{  id: 3, name: 'Fogo', color: '#F08030' },
-{  id: 4, name: 'Aço', color: '#9FB8B9' },
-{  id: 5, name: 'Água', color: '#4593C4' },
-{  id: 6, name: 'Pedra', color: '#5F5E5A' },
-{  id: 7, name: 'Terra', color: '#EEB147' },
-{  id: 8, name: 'Lutador', color: '#868277' },
-{  id: 9, name: 'Normal', color: '#CADBED' },
-{  id: 10, name: 'Psíquico', color: '#CA6BCC' },
-{  id: 11, name: 'Inseto', color: '#94B24E' },
-{  id: 12, name: 'Elétrico', color: '#F8D030' },
-{  id: 13, name: 'Sintético', color: '#8E8E9F' },
-{  id: 14, name: 'Fada', color: '#E584A0' },
-{  id: 15, name: 'Fantasma', color: '#624D8F' },
-{  id: 16, name: 'Sombrio', color: '#2F2F87' },
-{  id: 17, name: 'Som', color: '#8B7C55' },
-{  id: 18, name: 'Dragão', color: '#B9464E' },
-{  id: 19, name: 'Venenoso', color: '#57D870' },
-{  id: 20, name: 'Gelo', color: '#B4CBD9' },
-{  id: 21, name: 'Cósmico', color: '#A686DA' },
-{  id: 22, name: 'Indefinido', color: '#333333' },
-])
 
 User.create!(email: 'admin@admin.com', password: '123456')
