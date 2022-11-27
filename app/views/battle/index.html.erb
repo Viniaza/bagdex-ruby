@@ -10,7 +10,7 @@
     <div class="container d-flex flex-column gap-3" >
         <h1 class="text-center">Battle</h1>
         <div class="d-flex align-items-center justify-content-between">
-            <div>
+            <div id="divBagmon1">
                 <p>
                 <%= image_tag @bagmon1.image, width: "400" %>
                 </p>
@@ -21,7 +21,7 @@
             <p>
               X
             </p>
-            <div>
+            <div id="divBagmon2">
                 <p>
                     <%= image_tag @bagmon2.image, width: "400" %>
                 </p>
@@ -105,10 +105,17 @@
                 window.scrollTo(0, document.body.scrollHeight);
 
             }
-            // document.querySelector('#vencedorImage').style.display = "block"
+            if (lifes[rounds.length - 1][0] > lifes[rounds.length - 1][1]) {
+                document.querySelector('#divBagmon1').style.backgroundColor = "yellow"
+                document.querySelector('#divBagmon2').style.backgroundColor = "red"
+
+            } else {
+                document.querySelector('#divBagmon2').style.backgroundColor = "yellow"
+                document.querySelector('#divBagmon1').style.backgroundColor = "red"
+        }
         }
 
-
+        
 
         document.querySelector('#show-all').addEventListener('click', () => {
             document.querySelector('#result').style.overflow = 'unset'
@@ -133,5 +140,6 @@
         })
 
         battle();
+
     </script>
 <% end %>

@@ -1,16 +1,18 @@
 class BagmonsController < UsersBackofficeController
   before_action :set_bagmon, only: %i[ show edit update destroy ]
-  before_action :set_type_options, only: %i[ create new edit update ]
+  before_action :set_type_options #, only: %i[ show create new edit update ]
 
   def set_type_options
     @type_options = Type.all.pluck(:name, :id)
   end
 
 
-
-  # GET /bagmons or /bagmons.json
+  # GET /bagmons or /bagmons/type_id=1
   def index
     @bagmons = Bagmon.all
+    if (params[:type_id])
+      @bagmons = @bagmons.where(type_id: params[:type_id])
+    end
   end
 
   # GET /bagmons/1 or /bagmons/1.json

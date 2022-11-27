@@ -1,10 +1,25 @@
 <div class="container">
+
+<div style="margin-top: 10px">
+  <form action="/bagmons">
+      <div class="d-flex justify-content-start">
+          <div class="form-group">
+                <select required id="type_id" name="type_id" class="form-control">
+                    <option selected disabled>All types</option>
+                    <% @type_options.each do |type| %>
+                        <option value="<%= type[1] %>"><%= type[0] %></option>
+                    <% end %>
+                </select>
+            </div>
+        <button type="submit" class="btn btn-success">Filter</button>
+      </div>
+  </form>
+</div>
   <div class="d-flex align-items-center justify-content-between">
   <h1>Bagmons</h1>
 
   <%= link_to 'New Bagmon', new_bagmon_path, class:'btn btn-dark' %>
   </div>
-
   <div style='display: flex; flex-wrap: wrap; width: 100%; gap: 1rem; justify-content: space-between;'>
     <% @bagmons.each do |bagmon| %>
       <a style='text-decoration: none; background: <%=bagmon.type.color %>' href='/bagmons/<%= bagmon.id %>'>
