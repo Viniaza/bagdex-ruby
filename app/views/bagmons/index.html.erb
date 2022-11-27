@@ -1,3 +1,14 @@
+<style>
+
+    body {
+        background: url(https://bagdex.com.br/wp-content/uploads/2022/09/fundo_site_01.png) no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        
+    }
+</style>
+
 <div class="container">
 
 <div style="margin-top: 10px">
@@ -24,7 +35,7 @@
     <% @bagmons.each do |bagmon| %>
       <a style='text-decoration: none; background: <%=bagmon.type.color %>' href='/bagmons/<%= bagmon.id %>'>
         <div style=' color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%;'>
-          <h2><%= bagmon.name %></h2>
+          <h3><%= bagmon.name%> #<%=bagmon.id %></h2>
           <div style='width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;'>
             <%= image_tag bagmon.image, height: "400" %>
           </div>

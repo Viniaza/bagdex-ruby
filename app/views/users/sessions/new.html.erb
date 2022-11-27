@@ -1,50 +1,70 @@
-<%= stylesheet_link_tag "cadastro.css" %>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <style>
+    .cascading-right {
+      margin-right: -50px;
+    }
 
-<body>
-    <div class="container-cadastro">
-        <div class="content-box">
-            <div class="form-box">
-                <img class="image" src="/logo_bagdex.png" alt="Bagdex" width="200">
-                <h2>Login</h2>
-                <form>
-                    <div class="input-box">
+    @media (max-width: 991.98px) {
+      .cascading-right {
+        margin-right: 0;
+      }
+    }
+  </style>
+
+  <div class="container py-4">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right" style="
+                    background: hsla(0, 0%, 100%, 0.55);
+                    backdrop-filter: blur(30px);
+                    ">
+          <div class="card-body p-5 shadow-5 text-center">
+            <img class="image" src="/logo_bagdex.png" alt="Bagdex" width="200">
+            <h2 class="fw-bold mb-5">Login</h2>
+            <form>
+            <div class="row">
+              <div class="form-outline mb-4">
+                    <div class="form-outline">
                         <span>E-mail</span>
-                        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Digite seu email" %>
+                        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Digite seu email", class:"form-control form-control-lg" %>
                     </div>
-
-                    <div class="input-box">
-                        <span>Senha</span>
-                        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Digite sua senha" %>
-                    </div>
-
-                    <div class="remember">
-                        <% if devise_mapping.rememberable? %>
-                          <label>
-                            <%= f.check_box :remember_me %>
-                            <span>Lembrar informações</span>
-                          </label>
-                        <% end %>
-                        <a href="/users/password/new">Esqueceu a senha?</a>
-                    </div>
-
-                    <div class="input-box">
-                        <%= f.submit "Entrar" %>
-                    </div>
-
-                    <div class="input-box">
-                       <p>Não possui uma conta? <a href="/users/sign_up">Cadastre-se</a></p>
-                    </div>
-
-                    <div class="input-box">
-                       <%= render "devise/shared/error_messages", resource: resource %>
-                    </div>
-                </form>
+              </div>
+                <div class="form-outline mb-4">
+                    <span>Senha</span>
+                    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Digite sua senha", class:"form-control form-control-lg" %>
+                </div>
             </div>
-        </div>
-    </div>
-</body>
 
-</html>
+            <div class="remember">
+                <% if devise_mapping.rememberable? %>
+                    <label>
+                    <%= f.check_box :remember_me %>
+                    <span>Lembrar informações</span>
+                    </label>
+                <% end %>
+                <a href="/users/password/new">Esqueceu a senha?</a>
+            </div>
+
+            <div class="input-box">
+                <%= f.submit "Entrar", class:"btn btn-primary btn-block mb-4" %>
+            </div>
+            
+            <div class="input-box">
+                <p>Não possui uma conta? <a href="/users/sign_up">Cadastre-se</a></p>
+            </div>
+
+            <div class="input-box">
+                <%= render "devise/shared/error_messages", resource: resource %>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img src="https://bagdex.com.br/wp-content/uploads/2022/09/img_jogo-932x1024.png" class="w-100 rounded-4 shadow-4"
+          alt="" />
+      </div>
+    </div>
+  </div>
 <% end %>

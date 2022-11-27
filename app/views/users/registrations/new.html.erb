@@ -1,42 +1,60 @@
-<%= stylesheet_link_tag "cadastro.css" %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<style>
+
+    body {
+        background: url(https://bagdex.com.br/wp-content/uploads/2022/09/fundo_site_01.png) no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        
+    }
+</style>
+
  <body>
-    <div class="container-cadastro">
-        <div class="content-box">
-            <div class="form-box">
-                <h2>Cadastro</h2>
-                <form>
-                    <div class="input-box">
-                        <span>E-mail</span>
-                        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Digite seu email" %>
-                    </div>
+   <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card" style="
+                    backdrop-filter: blur(7px);
+                    background-color: rgba(255,255,255,0.4);
+                    ">
+                    <div class="card-body p-5 text-center">
+                        <img class="image" src="/logo_bagdex.png" alt="Bagdex" width="200">
+                        <h2 class="fw-bold mb-5">Cadastro</h2>
+                        <form>
+                            <div class="form-outline mb-4">
+                                <span>E-mail</span>
+                                <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Digite seu email", class:"form-control form-control-lg" %>
+                            </div>
 
-                    <div class="input-box">
-                        <span>Senha</span>
-                           <% if @minimum_password_length %>
-                              <em>(Minimo <%= @minimum_password_length %> caracteres)</em>
-                          <% end %><br />
-                     <%= f.password_field :password, autocomplete: "new-password", placeholder: "Digite sua senha" %>
-                    </div>
+                            <div class="form-outline mb-4">
+                                <span>Senha</span>
+                                <% if @minimum_password_length %>
+                                    <em>(Minimo <%= @minimum_password_length %> caracteres)</em>
+                                <% end %><br />
+                            <%= f.password_field :password, autocomplete: "new-password", placeholder: "Digite sua senha", class:"form-control form-control-lg" %>
+                            </div>
 
-                    <div class="input-box">
-                        <span>Confirme sua senha</span>
-                        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirme a senha" %>
-                    </div>
+                            <div class="form-outline mb-4">
+                                <span>Confirme sua senha</span>
+                                <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirme a senha", class:"form-control form-control-lg" %>
+                            </div>
 
-                    <div class="input-box">
-                        <%= f.submit "Registrar" %>
-                    </div>
+                            <div class="form-outline mb-4">
+                                <%= f.submit "Registrar", class:"btn btn-primary btn-lg btn-block" %>
+                            </div>
 
-                     <div class="input-box">
-                       <p>Já possui cadastro? <a href="/users/sign_in">Entrar</a></p>
-                    </div>
+                            <div class="form-outline mb-4">
+                            <p>Já possui cadastro? <a href="/users/sign_in">Entrar</a></p>
+                            </div>
 
-                    <div class="input-box">
-                       <%= render "devise/shared/error_messages", resource: resource, class:"alert alert-danger" %>
+                            <div class="form-outline mb-4">
+                            <%= render "devise/shared/error_messages", resource: resource, class:"alert alert-danger" %>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>

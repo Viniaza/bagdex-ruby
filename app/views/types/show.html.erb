@@ -1,12 +1,19 @@
-<p>
+<div class="container">
+
+  <h1>Type: </h1>
+  <p>
   <strong>Name:</strong>
   <%= @type.name %>
-</p>
+  </p>
 
-<p>
-  <strong>Color:</strong>
-  <%= @type.color %>
-</p>
+  <p>
+    <strong>Color:</strong>
+    <%= @type.color %>
+  </p>
 
-<%= link_to 'Edit', edit_type_path(@type), class:"btn btn-warning" %> |
+  <%= link_to 'Edit', edit_type_path(@type), class:"btn btn-warning" %> |
 <%= link_to 'Back', types_path, class:"btn btn-primary" %>
+</div>
+
+
+
