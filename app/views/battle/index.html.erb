@@ -30,7 +30,7 @@
                         Life:
                     </h2>
                 </div>
-                <p>
+                <p id="new">
 
                 X
                 </p>
@@ -121,13 +121,15 @@
 
             }
             if (lifes[rounds.length - 1][0] > lifes[rounds.length - 1][1]) {
-                document.querySelector('#divBagmon1').style.backgroundColor = "yellow"
+                document.querySelector('#divBagmon1').style.backgroundColor = "green"
                 document.querySelector('#divBagmon2').style.backgroundColor = "red"
 
             } else {
-                document.querySelector('#divBagmon2').style.backgroundColor = "yellow"
+                document.querySelector('#divBagmon2').style.backgroundColor = "green"
                 document.querySelector('#divBagmon1').style.backgroundColor = "red"
-        }
+            }
+            document.querySelector('#new').innerHTML = `<a class="btn btn-success" href="/battle" role="button">New Battle</a>`
+
         }
 
         
