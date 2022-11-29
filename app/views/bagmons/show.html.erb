@@ -18,7 +18,9 @@
 
             <div>
               <%= link_to 'Edit', edit_bagmon_path(@bagmon), class:"btn btn-warning" %>
-              <%= link_to 'Back', bagmons_path, class:"btn btn-primary" %>   
+              <%= link_to 'Back', bagmons_path, class:"btn btn-primary" %>
+              <%= link_to 'Delete', bagmon_path(@bagmon), method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %>
+
             </div>
           </div>
     </div>
